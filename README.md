@@ -1,4 +1,4 @@
-# banana (333)
+# banoffee (333)
 ==================
 
 # Initial Setup
@@ -88,24 +88,28 @@ Fork the project template from Github and install the following:
 - In your ionic folder run `$ ionic serve` from the terminal.
 - The Gulp Watch task will automatically run when you use the browser emulation. When changes made to any HTML, CSS, or JavaScript files are saved, Gulp will recompile your dist files and then automatically reload the browser.
 
-### iOS
-- Mac only
+### iOS (Mac only)
+#### via Simulator
 - Inside your ionic folder, build the app via the terminal `$ ionic build ios`
 - Emulate the build `$ ionic emulate ios`
+
+#### via Connected Device
+- Inside your ionic folder, build the app via the terminal `$ ionic build ios`
+- `$ ionic run ios --device`
 
 ### Android
 #### via Cordova
 - Make sure [Java for Mac OSX] (http://www.java.com/en/download/mac_download.jsp) and the [Android SDK] (http://developer.android.com/sdk/installing/index.html?pkg=tools) are installed.
 - Configure your Android devices via Tools > Manage AVDs in the Android SDK.
 - Inside your ionic folder, build the app via the terminal `$ ionic build android`
-- Emulate the build `$ ionic emulate android`
+- Emulate the build `$ ionic emulate android`.
 
 #### via GenyMotion [recommended]
 - Create and verify a [Genymotion] (https://www.genymotion.com) account.
 - [Download] (https://www.genymotion.com/download/) and install Genymotion.
 - Add your desired devices to the program. Double click a device to launch (alternatively, highlight and press Start).
-- Inside your ionic folder, build the app via the terminal `$ ionic build android`
-- Emulate the build (with your device open in Genymotion) `$ ionic run android `
+- Inside your ionic folder, build the app via the terminal `$ ionic build android`.
+- Emulate the build (with your device open in Genymotion) `$ ionic run android `.
 
 
 ## CSS Framework
