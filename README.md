@@ -12,13 +12,12 @@ Fork the project template from Github and install the following:
 - `$ sudo npm install` (to get all the dependencies)
 - `$ gulp scripts`. Running this will generate your dist folder in ionic/www
 
-To create a new project, you can follow Ionic's [installation guide] (http://ionicframework.com/docs/guide/installation.html).
 
 ## Configure Platforms
 
 ### iOS 
 - Installation instructions can be found [here] (https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html).
-- You don't need to run `$ cordova create hello com.example.hello "HelloWorld"`, since we have already created a project. 
+- Note: You don't need to run `$ cordova create hello com.example.hello "HelloWorld"`, since we have already created a project. 
 
 ### Android
 - Installation instructions can be found [here] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide).
@@ -44,14 +43,15 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 ## HockeyApp
 ### Setup
 - We are using Hockeyapp to distribute builds to approved devices. 
-- Request an invitation to the Cohaesus HockeyApp account / create a free [account] (https://rink.hockeyapp.net/registrations/new).
+- Create a HockeyApp [account] (https://rink.hockeyapp.net/registrations/new).
+- Request an invitation to the Cohaesus HockeyApp account (See Richard Bundock).
 - Follow the instructions to [add your devices to your profile] (http://support.hockeyapp.net/kb/client-integration-ios-mac-os-x-tvos/adding-new-devices-to-your-provisioning-profile). 
 - Create New App from the HockeyApp Dashboard (select create the app manually).
 - The Bundle Identifier must match the __widget id__ in your __config.xml__ file. 
 - Collect the App ID (located by selecting the app from the dashboard) and [generate an API token] (https://rink.hockeyapp.net/manage/auth_tokens) for your app. Assign the values to the respective variables in the deploy-scripts folder.
 
-### Distribution (important)
-- Select _Manage App_ inside your newly-created app. From there, navigate to _Distribution_ and set the Download page to __private__. This ensures other devices provisioned on our Apple Developer account will not be able to download your app. You will either need to restrict each version manually via Dashboard - <Your App> - Version - Manage Version, or by amending the deploy-android.sh script using these additional [API Parameters] (http://support.hockeyapp.net/kb/api/api-apps#upload-app).  
+### Distribution (__important__)
+- Select _Manage App_ inside your newly-created app. From there, navigate to _Distribution_ and set the Download page to __private__. This ensures other devices provisioned on our Apple Developer account will not be able to download your app. You will either need to restrict each version manually via _Dashboard - {Your App} - Version - Manage Version_, or by amending the deploy-android.sh script using these additional [API Parameters] (http://support.hockeyapp.net/kb/api/api-apps#upload-app).  
 
 ### Deployment
 #### Android (.apk)
