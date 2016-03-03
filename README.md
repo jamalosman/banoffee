@@ -51,7 +51,7 @@ Fork the project template from Github and install the following:
 - Collect the App ID (located by selecting the app from the dashboard) and [generate an API token] (https://rink.hockeyapp.net/manage/auth_tokens) for your app. Assign the values to the respective variables in the deploy-scripts folder.
 
 ### Distribution (__important__)
-- Select _Manage App_ inside your newly-created app. From there, navigate to _Distribution_ and set the Download page to __private__. This ensures other devices provisioned on our Apple Developer account will not be able to download your app. You will either need to restrict each version manually via _Dashboard - {Your App} - Version - Manage Version_, or by amending the deploy-android.sh script using these additional [API Parameters] (http://support.hockeyapp.net/kb/api/api-apps#upload-app).  
+- Select _Manage App_ inside your newly-created app. From there, navigate to _Distribution_ and set the Download page to __private__. This ensures other devices provisioned on our Apple Developer account will not be able to download your app. You will either need to restrict each version manually via _Dashboard - {Your App} - Version - Manage Version_, or by amending the __deploy-android.sh__ script using these additional [API Parameters] (http://support.hockeyapp.net/kb/api/api-apps#upload-app).  
 
 ### Deployment
 #### Android (.apk)
@@ -59,10 +59,11 @@ Fork the project template from Github and install the following:
 - Follow [these instructions](http://ionicframework.com/docs/guide/publishing.html) to generate and sign the .apk file.
 - Executing '$ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000' will generate your keystore file in the directory you executed the command. _.gitignore_ is set to ignore keystore files stored in the ionic folder, if you choose to store it outside of the apk folder. 
 - Sign your app with `$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore android-release-unsigned.apk alias_name`
-- Update the deploy-android.sh / deploy-tags.sh scripts in the deploy-scripts folder. When uploading to HockeyApp, make sure the APP_FILE is set to the android-release-unsigned.apk file. 
+- Update the __deploy-android.sh__ and __deploy-tags.sh__ scripts in the deploy-scripts folder. When uploading to HockeyApp, make sure the __APP_FILE__ is set to the __android-release-unsigned.apk__ file.
+- Run the deploy-Android Gulp task `$ gulp deploy-Android` 
 
 ###### Publishing to Google Play Store
-- To use the zipalign command `$ zipalign -v 4 android-release-unsigned.apk <App Name>.apk`, copy the zipalign file from android-sdk-macosx/build-tools and paste in android-sdk-macosx/tools. Only use the zipalign command below if you wish to publish to Google Play store. 
+- To use the zipalign command `$ zipalign -v 4 android-release-unsigned.apk <App Name>.apk`, copy the zipalign file from android-sdk-macosx/build-tools and paste in android-sdk-macosx/tools. Only use the zipalign command if are publishing to the Google Play store. 
 
 ##### Future Deployment
 - Run the deploy-Android Gulp task `$ gulp deploy-Android`
@@ -70,12 +71,13 @@ Fork the project template from Github and install the following:
 #### iOS (.ipa)
 ##### Initial Setup
 - In the ionic directory, run `$ ionic build ios`
-- Request an invitation to the 'Cohaesus Projects Ltd' Apple Developer Account.
+- Request an invitation to the 'Cohaesus Projects Ltd' Apple Developer Account (see Richard Bundock).
 - Navigate to Xcode > Preferences > Account.
 - Import your developer profile using the cog (next to the plus symbol).
 - Open Xcode. Import the .xcodeproj generated from `$ ionic build ios`.
 - Select Product > Clean.
 - If you experience the following error: “Missing iOS Distribution signing identity for …”, [this] (http://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for) should resolve the error.
+- Run the Deploy iOS Gulp task `$ gulp deploy-iOS`
 
 ##### Future Deployment
 1. Run the Deploy iOS Gulp task `$ gulp deploy-iOS`
@@ -109,15 +111,17 @@ Fork the project template from Github and install the following:
 ## CSS Framework
 
 ### SASS
-- SASS structure is based on [Inverted the Triangle CSS] (http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528) (ITCSS), courtesy of Harry Roberts.
+- SASS structure is based on [Inverted Triangle CSS] (http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528) (ITCSS), courtesy of Harry Roberts.
 - It is important that you load in any files your create in the correct order in the main.scss file. 
 - Each folder contains a readme.md file, which explains the expected content.
 
 ### Angular-ui-Bootstrap
 - We have also installed Bootstrap components written in pure AngularJS. You can view the documentation [here] (https://angular-ui.github.io/bootstrap/).
+- An example accordion has been included in `www/templates/search.html`.
 
 ### Bootstrap CSS
 - The Bootstrap CSS library is a listed dependancy of the angular-ui-bootstrap module, so you also have access to the [Bootstrap CSS library] (http://getbootstrap.com/css/).
+- An example jumbotron class has been included in `www/templates/search.html`.
 
 ### CSS
 - We have left in a default style.css in the www folder if you do not wish to use SASS
