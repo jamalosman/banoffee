@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!-- Replace <unique-identifier> with a unique id for your app. Do not modify this once you have published to HockeyApp or the Play/iTunes store, since it will recognise it as a new app and users will not receive the updated version -->
-<widget id="com.ionicframework.<unique-identifier>" version="001" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<!-- Replace 'name' with a unique id for your app. Do not modify this once you have published to HockeyApp or the Play/iTunes store, since it will recognise it as a new app and users will not receive the updated version -->
+<widget id="com.cohaesus.name" version="001" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>My Ionic App</name>
     <description>
         An Ionic Framework and Cordova project.

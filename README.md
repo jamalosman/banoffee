@@ -2,8 +2,8 @@
 ==================
 
 # Initial Setup
-Ensure the following are up to date:
-- [__homebrew__] (http://brew.sh/)
+Ensure the following are installed and up to date:
+- [__homebrew__] (http://brew.sh/) `$ brew update'
 - [__node / npm__] (https://nodejs.org/en/download/)
 - [__xcode__] (https://developer.apple.com/xcode/download/)
 
@@ -22,11 +22,17 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 
 ### Android
 - Installation instructions can be found [here] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide).
-- Download [SDK Tools] (http://developer.android.com/sdk/index.html#Other)  
-- Download [Java for OSX 2015-001] (https://support.apple.com/kb/DL1572?locale=en_US).
-- Download [Java for OSX] (http://www.java.com/en/download/mac_download.jsp)
-- Run the android exec (found in _android-sdk-macosx/tools_). Install your desired Android SDK Platform(s), ensuring the SDK Platform and the System Image boxes are checked; Android SDK Tools; Android SDK Build Tools (>= v19.1.0); SDK Platform Tools, and Android Support Repository (found in Extras).
-- Update __PATH__ in `~./bash_profile` to point to the Android SDK. Use the following command to open the profile in the default text editor `$ touch ~/.bash_profile; open ~/.bash_profile`. Update the PATH to `export PATH=${PATH}:/Users/__<CohaesusEmployee>__/Development/android-sdk-macosx/platform-tools:/Users/__<CohaesusEmployee>__/Development/android-sdk-macosx/tools`. Save.
+- Installation Links:
+	- [SDK Tools] (http://developer.android.com/sdk/index.html#Other).
+	- [Java for OSX 2015-001] (https://support.apple.com/kb/DL1572?locale=en_US).
+	- [Java for OSX] (http://www.java.com/en/download/mac_download.jsp).
+- Run the _android_ exec found in `android-sdk-macosx/tools`. Install the following: 
+	- Desired Android SDK Platform(s) (ensuring the SDK Platform and the System Image boxes are checked) 
+	- Android SDK Tools
+	- Android SDK Build Tools (>= v19.1.0)
+	- SDK Platform Tools
+	- Android Support Repository (found in Extras).
+- Update __PATH__ in `~./bash_profile` to point to the Android SDK. Use the following command to open the profile in the default text editor `$ touch ~/.bash_profile; open ~/.bash_profile`. Update the PATH to `export PATH=${PATH}:/Users/__<COHAESUSEMPLOYEE>__/Development/android-sdk-macosx/platform-tools:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/tools`. Save.
 - Execute `$ source ~/.bash_profile` in the terminal.
 
 ## Add Platforms to Ionic
