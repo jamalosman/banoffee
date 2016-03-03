@@ -3,23 +3,23 @@
 
 # Initial Setup
 Ensure the following are up to date:
-1. [homebrew] (http://brew.sh/)
-2. [node / npm] (https://nodejs.org/en/download/)
-3. [xcode] (https://developer.apple.com/xcode/download/)
+- [homebrew] (http://brew.sh/)
+- [node / npm] (https://nodejs.org/en/download/)
+- [xcode] (https://developer.apple.com/xcode/download/)
 
-- Fork (don't clone!) the project template from Github and install the following:
+Fork the project template from Github and install the following:
 - `$ sudo npm install -g gulp bower cucumber cordova ionic strongloop`
 - `$ sudo npm install` (to get all the dependencies)
-- Run `$ gulp scripts` to generate your dist folder in ionic/www
+- `$ gulp scripts`. Running this will generate your dist folder in ionic/www
 
 To create a new project, you can follow Ionic's [installation guide] (http://ionicframework.com/docs/guide/installation.html).
 
 ## Configure Platforms
 
-### [**iOS**] (https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html) (Mac only)
+### iOS [[Instructions]] (https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html)
 - You don't need to run `$ cordova create hello com.example.hello "HelloWorld"`, since we have already created a project. 
 
-### [**Android**] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide)
+### Android [[**Android**]] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide)
 - Download [SDK Tools] (http://developer.android.com/sdk/index.html#Other)  
 - Download [Java for OSX 2015-001] (https://support.apple.com/kb/DL1572?locale=en_US).
 - Download [Java for OSX] (http://www.java.com/en/download/mac_download.jsp)
