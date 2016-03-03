@@ -3,7 +3,7 @@
 
 # Initial Setup
 Ensure the following are installed and up to date:
-- [__homebrew__] (http://brew.sh/) `$ brew update'
+- [__homebrew__] (http://brew.sh/)
 - [__node / npm__] (https://nodejs.org/en/download/)
 - [__xcode__] (https://developer.apple.com/xcode/download/)
 
@@ -24,7 +24,7 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 - Installation instructions can be found [here] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide).
 - Installation Links:
 	- [SDK Tools] (http://developer.android.com/sdk/index.html#Other).
-	- [Java for OSX 2015-001] (https://support.apple.com/kb/DL1572?locale=en_US).
+	- [Java for OSX 2015-001] (https://support.apple.com/kb/DL1572?locale=en_US). 
 	- [Java for OSX] (http://www.java.com/en/download/mac_download.jsp).
 - Run the _android_ exec found in `android-sdk-macosx/tools`. Install the following: 
 	- Desired Android SDK Platform(s) (ensuring the SDK Platform and the System Image boxes are checked) 
@@ -32,11 +32,11 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 	- Android SDK Build Tools (>= v19.1.0)
 	- SDK Platform Tools
 	- Android Support Repository (found in Extras).
-- Update __PATH__ in `~./bash_profile` to point to the Android SDK. Use the following command to open the profile in the default text editor `$ touch ~/.bash_profile; open ~/.bash_profile`. Update the PATH to `export PATH=${PATH}:/Users/__<COHAESUSEMPLOYEE>__/Development/android-sdk-macosx/platform-tools:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/tools`. Save.
+- Update __PATH__ in `~./bash_profile` to point to the Android SDK. Use the following command to open the profile in the default text editor `$ touch ~/.bash_profile; open ~/.bash_profile`. Update the PATH to `export PATH=${PATH}:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/platform-tools:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/tools`. Save.
 - Execute `$ source ~/.bash_profile` in the terminal.
 
 ## Add Platforms to Ionic
-- Amend the __"widget id"__ in your _config.xml_ file (must follow: _com.company.name_)
+- Amend the __"widget id"__ in your __config.xml__ file (must follow the following standard: __com.company.name__)
 - `$ ionic platform add ios`
 - `$ ionic platform add android`
 
@@ -44,11 +44,10 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 ## HockeyApp
 ### Setup
 - We are using Hockeyapp to distribute builds to approved devices. 
-- Request an invitation to the Cohaesus HockeyApp account / create a free [account] (https://rink.hockeyapp.net/registrations/new)
+- Request an invitation to the Cohaesus HockeyApp account / create a free [account] (https://rink.hockeyapp.net/registrations/new).
 - Follow the instructions to [add your devices to your profile] (http://support.hockeyapp.net/kb/client-integration-ios-mac-os-x-tvos/adding-new-devices-to-your-provisioning-profile). 
-- Create a new app from the dashboard. This can be done in one of three ways:
-	1. Create New App from the HockeyApp Dashboard (select create the app manually).
-	2. The Bundle Identifier must match the __widget id__ in your _config.xml_ file. 
+- Create New App from the HockeyApp Dashboard (select create the app manually).
+- The Bundle Identifier must match the __widget id__ in your __config.xml__ file. 
 - Collect the App ID (located by selecting the app from the dashboard) and [generate an API token] (https://rink.hockeyapp.net/manage/auth_tokens) for your app. Assign the values to the respective variables in the deploy-scripts folder.
 
 ### Distribution (important)
