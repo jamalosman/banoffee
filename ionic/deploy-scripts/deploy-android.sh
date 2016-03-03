@@ -5,13 +5,13 @@ current_tag=$(git describe --abbrev=0 --tags)
 echo "Current tag: $current_tag"
 
 # APP_ID can be located by selecting your app on HockeyApp's dashboard. 
-APP_ID=
+APP_ID=7376944b51014483a3eb56faf10742e6
 
 # The API_TOKEN is located in HockeyApp's Account Settings > API Tokens
-API_TOKEN=
+API_TOKEN=7dad379789524d4b93307967498404ac
 
 # APP_FILE should match the desired apk file in platforms/android/build/outputs/apk. 
-APP_FILE=""
+APP_FILE="IonicApp"
 
 # push the app to HockeyApp [Additional API parameters: http://support.hockeyapp.net/kb/api/api-apps#upload-app]
 response=$(curl \
@@ -30,7 +30,7 @@ linkobj=$(echo "$response" | python -m json.tool)
 
 # Publish build information to the HipChat project room
 # ROOM_ID can be found at https://cohaesus.hipchat.com/rooms
-ROOM_ID=
+ROOM_ID=2441414
 AUTH_TOKEN=84c3fe7cf3785dc58ad1997e119136
 MESSAGE="Android Build $current_tag published: $linkobj"
 
