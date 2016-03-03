@@ -11,7 +11,7 @@ APP_ID=
 API_TOKEN=
 
 # APP_FILE should match the desired apk file in platforms/android/build/outputs/apk. 
-APP_FILE=""
+APP_FILE="Ionic App"
 
 # push the app to HockeyApp [Additional API parameters: http://support.hockeyapp.net/kb/api/api-apps#upload-app]
 response=$(curl \
@@ -30,8 +30,9 @@ linkobj=$(echo "$response" | python -m json.tool)
 
 # Publish build information to the HipChat project room
 # ROOM_ID can be found at https://cohaesus.hipchat.com/rooms
+# AUTH_TOKEN can be found in the Shared-Cohaesus General Passwords folder in LastPass (hipchat auth token) 
 ROOM_ID=
-AUTH_TOKEN=84c3fe7cf3785dc58ad1997e119136
+AUTH_TOKEN=
 MESSAGE="Android Build $current_tag published: $linkobj"
 
 echo $(curl \

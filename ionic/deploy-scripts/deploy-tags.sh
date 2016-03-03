@@ -10,8 +10,9 @@ echo "$new_tag"
 
 # Announce to HipChat
 # ROOM_ID can be found at https://cohaesus.hipchat.com/rooms
+# AUTH_TOKEN can be found in the Shared-COhaesus General Passwords folder in LastPass (hipchat auth token) 
 ROOM_ID=
-AUTH_TOKEN=84c3fe7cf3785dc58ad1997e119136
+AUTH_TOKEN=
 MESSAGE="Starting build $new_tag"
 
 echo $(curl \
