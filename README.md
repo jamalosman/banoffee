@@ -3,9 +3,9 @@
 
 # Initial Setup
 Ensure the following are up to date:
-- [homebrew] (http://brew.sh/)
-- [node / npm] (https://nodejs.org/en/download/)
-- [xcode] (https://developer.apple.com/xcode/download/)
+- [__homebrew__] (http://brew.sh/)
+- [__node / npm__] (https://nodejs.org/en/download/)
+- [__xcode__] (https://developer.apple.com/xcode/download/)
 
 Fork the project template from Github and install the following:
 - `$ sudo npm install -g gulp bower cucumber cordova ionic strongloop`
@@ -16,19 +16,21 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 
 ## Configure Platforms
 
-### iOS [[Instructions]] (https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html)
+### iOS 
+- Installation instructions can be found [here] (https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html).
 - You don't need to run `$ cordova create hello com.example.hello "HelloWorld"`, since we have already created a project. 
 
-### Android [[**Android**]] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide)
+### Android
+- Installation instructions can be found [here] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide).
 - Download [SDK Tools] (http://developer.android.com/sdk/index.html#Other)  
 - Download [Java for OSX 2015-001] (https://support.apple.com/kb/DL1572?locale=en_US).
 - Download [Java for OSX] (http://www.java.com/en/download/mac_download.jsp)
-- Run the android file (found in android-sdk-macosx > tools). Install your desired Android SDK Platform(s) [ensure the SDK Platform and the System Image boxes are checked], Android SDK Tools, Android SDK Build Tools (>= v19.1.0), SDK Platform Tools and Android Support Repository (found in Extras).
-- Update PATH in `~./bash_profile` to point to the android SDK. Use the following command to open the profile in the default text editor `$ touch ~/.bash_profile; open ~/.bash_profile`. Update the PATH to `export PATH=${PATH}:/Users/CohaesusEmployee/Development/android-sdk-macosx/platform-tools:/Users/CohaesusEmployee/Development/android-sdk-macosx/tools`. Save.
+- Run the android exec (found in _android-sdk-macosx/tools_). Install your desired Android SDK Platform(s), ensuring the SDK Platform and the System Image boxes are checked; Android SDK Tools; Android SDK Build Tools (>= v19.1.0); SDK Platform Tools, and Android Support Repository (found in Extras).
+- Update __PATH__ in `~./bash_profile` to point to the Android SDK. Use the following command to open the profile in the default text editor `$ touch ~/.bash_profile; open ~/.bash_profile`. Update the PATH to `export PATH=${PATH}:/Users/__<CohaesusEmployee>__/Development/android-sdk-macosx/platform-tools:/Users/__<CohaesusEmployee>__/Development/android-sdk-macosx/tools`. Save.
 - Execute `$ source ~/.bash_profile` in the terminal.
 
 ## Add Platforms to Ionic
-- Amend the __widget id__ in your config.xml file (must follow: _com.company.name_)
+- Amend the __"widget id"__ in your _config.xml_ file (must follow: _com.company.name_)
 - `$ ionic platform add ios`
 - `$ ionic platform add android`
 
