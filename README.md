@@ -32,7 +32,9 @@ Note: When installing the platforms, remember you don't need to run `$ cordova c
 	- Android SDK Build Tools (>= v19.1.0)
 	- SDK Platform Tools
 	- Android Support Repository (found in Extras).
-- Update __PATH__ in `~./bash_profile` to point to the Android SDK. Use the following command to open the profile in the default text editor `$ touch ~/.bash_profile; open ~/.bash_profile`. Update the PATH to e.g. `export PATH=${PATH}:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/platform-tools:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/tools`. Make sure this path matches your bash profile's location. 
+- Update __PATH__ in `~./bash_profile` to point to the Android SDK. 
+	- Use the following command to open the profile in the default text editor `$ touch ~/.bash_profile; open ~/.bash_profile`. 
+	- Update the PATH, e.g. `export PATH=${PATH}:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/platform-tools:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/tools`. Make sure this path matches your bash profile's location. 
 - Execute `$ source ~/.bash_profile` in the terminal.
 
 ### Add the Platforms to Ionic
@@ -74,14 +76,14 @@ Note: When installing the platforms, remember you don't need to run `$ cordova c
 - In the ionic directory, run `$ ionic build ios`
 - Request an invitation to the 'Cohaesus Projects Ltd' Apple Developer Account (see Richard Bundock).
 - Navigate to Xcode > Preferences > Account.
-- Import your developer profile using the cog (next to the plus symbol).
-- Open Xcode. Import the .xcodeproj generated from `$ ionic build ios`.
+- Import your developer profile using the cog, or add your Apple ID using the plus (after accepting the Cohaesus invitation). 
+- Open Xcode. Import the __.xcodeproj__ file generated from `$ ionic build ios`, found in `platforms/ios`.
 - Select Product > Clean.
 - If you experience the following error: “Missing iOS Distribution signing identity for …”, [this] (http://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for) should resolve the error.
-- Run the Deploy iOS Gulp task `$ gulp deploy-iOS`
+- Run the deploy-iOS Gulp task `$ gulp deploy-iOS`
 
 ##### Future Deployment
-1. Run the Deploy iOS Gulp task `$ gulp deploy-iOS`
+1. Run the deploy-iOS Gulp task `$ gulp deploy-iOS`
 
 
 ## Emulation
@@ -114,15 +116,10 @@ Note: When installing the platforms, remember you don't need to run `$ cordova c
 
 
 ## CSS Framework
-
 ### SASS
 - SASS structure is based on [Inverted Triangle CSS] (http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528) (ITCSS), courtesy of Harry Roberts.
 - It is important that you load in any files your create in the correct order in the main.scss file. 
 - Each folder contains a readme.md file, which explains the expected content.
-
-### Angular-ui-Bootstrap
-- We have also installed Bootstrap components written in pure AngularJS. You can view the documentation [here] (https://angular-ui.github.io/bootstrap/).
-- An example accordion has been included in `www/templates/search.html`.
 
 ### Bootstrap CSS
 - The Bootstrap CSS library is a listed dependancy of the angular-ui-bootstrap module, so you also have access to the [Bootstrap CSS library] (http://getbootstrap.com/css/).
@@ -130,6 +127,23 @@ Note: When installing the platforms, remember you don't need to run `$ cordova c
 
 ### CSS
 - We have left in a default style.css in the www folder if you do not wish to use SASS
+
+
+## Javascript 
+### Angular-UI-Bootstrap
+- We have installed Bootstrap components written in pure AngularJS. You can view the documentation [here] (https://angular-ui.github.io/bootstrap/).
+- An example accordion has been included in `www/templates/search.html`.
+
+### Browserify 
+- We are using gulp-browserify to generate a single (minified) Javascript file that is referenced in index.html. 
+- If you create any additional Javascript files, declare the file path at the top the page on `www/app.js` (referenced elsewhere as our single entry point), and add any modular dependancies to the Angular _'starter'_ module.
+
+### Gulp Tasks
+- `$ gulp` Default task. Runs the `$ gulp sass` and `$ gulp scripts` tasks.
+- `$ gulp scripts` Uses [browserify] (https://www.npmjs.com/package/gulp-browserify) to pull all JS files declared in your single-point entry (and their associated depandancies), [annotates] (https://www.npmjs.com/package/gulp-ng-annotate) it, then generates your `www/dist/js/app.js` and `www/dist/js/app.min.js` files. 
+- `$ gulp sass` 
+- `$ gulp deploy-Android`
+- `$ gulp deploy-iOS`
 
 
 ## API
