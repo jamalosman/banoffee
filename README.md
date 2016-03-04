@@ -63,27 +63,27 @@ Note: When installing the platforms, remember you don't need to run `$ cordova c
 - Executing `$ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000` will generate your keystore file in the directory you executed the command. _.gitignore_ is set to ignore keystore files stored in the ionic folder, if you choose to store it outside of the apk folder. 
 - Sign your app with `$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore android-release-unsigned.apk alias_name`
 - Update the __deploy-android.sh__ and __deploy-tags.sh__ scripts in the deploy-scripts folder. When uploading to HockeyApp, make sure the __APP_FILE__ is set to the __android-release-unsigned.apk__ file.
-- Run the deploy-Android Gulp task `$ gulp deploy-Android` 
+- Run the deploy-Android Gulp task `$ gulp deploy-Android`. 
 
 ###### Publishing to Google Play Store
 - To use the zipalign command `$ zipalign -v 4 android-release-unsigned.apk <App Name>.apk`, copy the zipalign file from android-sdk-macosx/build-tools and paste in android-sdk-macosx/tools. Only use the zipalign command if are publishing to the Google Play store. 
 
 ##### Future Deployment
-- Run the deploy-Android Gulp task `$ gulp deploy-Android`
+- Run the deploy-Android Gulp task `$ gulp deploy-Android`.
 
 #### iOS (.ipa)
 ##### Initial Setup
-- In the ionic directory, run `$ ionic build ios`
+- In the ionic directory, run `$ ionic build ios`.
 - Request an invitation to the 'Cohaesus Projects Ltd' Apple Developer Account (see Richard Bundock).
 - Navigate to Xcode > Preferences > Account.
 - Import your developer profile using the cog, or add your Apple ID using the plus (after accepting the Cohaesus invitation). 
 - Open Xcode. Import the __.xcodeproj__ file generated from `$ ionic build ios`, found in `platforms/ios`.
 - Select Product > Clean.
-- If you experience the following error: “Missing iOS Distribution signing identity for …”, [this] (http://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for) should resolve the error.
-- Run the deploy-iOS Gulp task `$ gulp deploy-iOS`
+- If you experience the following error: _“Missing iOS Distribution signing identity for …”_, [this] (http://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for) should resolve the error.
+- Run the deploy-iOS Gulp task `$ gulp deploy-iOS`.
 
 ##### Future Deployment
-1. Run the deploy-iOS Gulp task `$ gulp deploy-iOS`
+1. Run the deploy-iOS Gulp task `$ gulp deploy-iOS`.
 
 
 ## Emulation
@@ -93,12 +93,12 @@ Note: When installing the platforms, remember you don't need to run `$ cordova c
 
 ### iOS (Mac only)
 #### via Simulator
-- Inside your ionic folder, build the app via the terminal `$ ionic build ios`
-- Emulate the build `$ ionic emulate ios`
+- Inside your ionic folder, build the app via the terminal `$ ionic build ios`.
+- Emulate the build `$ ionic emulate ios`.
 
 #### via Connected Device
-- Inside your ionic folder, build the app via the terminal `$ ionic build ios`
-- `$ ionic run ios --device`
+- Inside your ionic folder, build the app via the terminal `$ ionic build ios`.
+- `$ ionic run ios --device`.
 
 ### Android
 #### via Cordova
@@ -140,10 +140,10 @@ Note: When installing the platforms, remember you don't need to run `$ cordova c
 
 ### Gulp Tasks
 - `$ gulp` Default task. Runs the `$ gulp sass` and `$ gulp scripts` tasks.
-- `$ gulp scripts` Uses [browserify] (https://www.npmjs.com/package/gulp-browserify) to pull all JS files declared in your single-point entry (and their associated depandancies), [annotates] (https://www.npmjs.com/package/gulp-ng-annotate) it, then generates your `www/dist/js/app.js` and `www/dist/js/app.min.js` files. 
-- `$ gulp sass` 
-- `$ gulp deploy-Android`
-- `$ gulp deploy-iOS`
+- `$ gulp scripts` Uses [browserify] (https://www.npmjs.com/package/gulp-browserify) to pull all JS files declared in your single-point entry (and their associated depandancies) and [annotates] (https://www.npmjs.com/package/gulp-ng-annotate) them. It then generates your `www/dist/js/app.js` and an [uglified] (https://www.npmjs.com/package/gulp-uglify) `www/dist/js/app.min.js` file. 
+- `$ gulp sass` Compiles all Sass/CSS files declared in `scss/main.scss`, then generates the `www/dist/css/main.css` and a [minified] (https://www.npmjs.com/package/gulp-minify-css)`www/dist/css/main.min.css` file.
+- `$ gulp deploy-Android` / `$ gulp deploy-iOS` Increments the build version (using git tags), generates a new platform build, deploys it to HockeyApp, and publishes the build information in your HipChat project room. 
+- 
 
 
 ## API
