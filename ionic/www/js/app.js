@@ -12,7 +12,7 @@ var controllers = require('./controllers.js');
 var ngResource = require('../../node_modules/angular-resource/angular-resource.min.js');
 var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js');
 
-angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ui.bootstrap'])
 
 .controller ('MainController', function ($scope) {} )
 
@@ -32,10 +32,11 @@ angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstr
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, LoopBackResourceProvider) {
+// If you are using the loopback angular sdk, add a parameter here for the LoopbackResourceProvider
+.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
@@ -52,53 +53,28 @@ angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstr
   })
 
   .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-  .state('app.formtest', {
-    url: '/formtest',
+    url: '/browse',
     views: {
       'menuContent': {
-        templateUrl: 'templates/formtest.html',
-      }
-    }
-  })
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/browse.html'
       }
     }
   })
 
-  .state('app.profile', {
-    url: '/profile',
+  .state('app.playlists', {
+    url: '/playlists',
     views: {
       'menuContent': {
-        templateUrl: 'templates/profile.html',
-        controller: 'ProfileCtrl'
+        templateUrl: 'templates/playlists.html',
+        controller: 'PlaylistsCtrl'
       }
     }
   });
-//
+
+  //
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 
   // Change the URL where to access the LoopBack REST API server
-  LoopBackResourceProvider.setUrlBase('http://banana-onbaord.herokuapp.com/api');
+  // LoopBackResourceProvider.setUrlBase('API URL');
 });
