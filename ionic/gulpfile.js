@@ -46,7 +46,6 @@ gulp.task('scripts', function() {
       insertGlobals : true
     }))
     .pipe(ngAnnotate())
-    .on('error', scripts.logError)
     .pipe(gulp.dest('./www/dist/js/'))
 
     .pipe(uglify())
