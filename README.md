@@ -10,7 +10,7 @@ Ensure the following are installed and up to date:
 Fork the project template from Github and install the following:
 - `$ sudo npm install -g gulp bower cucumber cordova ionic strongloop`.
 - `$ sudo npm install`. This will grab all of the project dependencies.
-- `$ gulp scripts`. Running this will generate your `ionic/www/dist` folder.
+- `$ gulp`. Running the default task from the Ionic directory will generate your `ionic/www/dist` folder.
 
 
 ## Configure Platforms
