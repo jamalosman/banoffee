@@ -16,11 +16,11 @@ Fork the project template from Github and install the following:
 ## Configure Platforms
 
 - Amend the __"widget id"__ in your __config.xml__ file. It must follow the following standard: 
-- `com.company.projectname` (e.g. com.cohaesus.onboardapp)
+	`com.company.projectname` (e.g. com.cohaesus.onboardapp)
 
 ### iOS 
 - Ensure Xcode is up to date.
-- `$ ionic platform add ios`
+- `$ ionic platform add ios`.
 
 ### Android
 - Install the following:
@@ -37,7 +37,7 @@ Fork the project template from Github and install the following:
 	- Use either command to open *bash_profile*: `$ open -a TextEdit ~/.bash_profile` [Text Editor] or `$ nano ~/.bash_profile` [CLI]. 
 	- Update the PATH inside the file, e.g. `export PATH=${PATH}:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/platform-tools:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/tools`. Make sure this path matches your *bash_profile* location. 
 - Execute `$ source ~/.bash_profile` in the terminal.
-- `$ ionic platform add android`
+- `$ ionic platform add android`.
 
 
 ## HockeyApp
@@ -102,8 +102,8 @@ Fork the project template from Github and install the following:
 #### via Cordova
 - Make sure [Java for Mac OSX] (http://www.java.com/en/download/mac_download.jsp) and the [Android SDK] (http://developer.android.com/sdk/installing/index.html?pkg=tools) are installed.
 - Configure your Android devices via Tools > Manage AVDs in the Android SDK.
-- Inside your ionic folder, build the app via the terminal `$ ionic build android`
-- Emulate the build `$ ionic emulate android`.w
+- Inside your ionic folder, build the app via the terminal `$ ionic build android`.
+- Emulate the build `$ ionic emulate android`.
 
 #### via GenyMotion [recommended]
 - Create and verify a [Genymotion] (https://www.genymotion.com) account.
@@ -124,7 +124,7 @@ Fork the project template from Github and install the following:
 - An example jumbotron class has been included in `www/templates/search.html`.
 
 ### CSS
-- We have left in a default style.css in the www folder if you do not wish to use SASS
+- We have left in a default style.css in the www folder if you do not wish to use SASS.
 
 
 ## Javascript 
