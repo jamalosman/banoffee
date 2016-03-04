@@ -14,19 +14,24 @@ APP_FILE="My Ionic App"
 /usr/bin/xcrun -sdk iphoneos PackageApplication $PWD/platforms/ios/"$APP_FILE".xcarchive/Products/Applications/"$APP_FILE".app -o $PWD/platforms/ios/build/"$APP_FILE""_v""$current_tag".ipa
 
 # APP_ID can be located by selecting your app on HockeyApp's dashboard. 
-APP_ID=
+APP_ID=52fc096fdfc340e094ae113745b0e3ee
 
 # The API_TOKEN is located in HockeyApp's Account Settings > API Tokens
-API_TOKEN=
+API_TOKEN=d80290f380ff4399a8d89dacc78212e2
+
+TEAMID=60527
+
 
 # Push to HockeyApp [Additional API parameters: http://support.hockeyapp.net/kb/api/api-apps#upload-app]
 response=$(curl \
   -F "status=2" \
   -F "notify=1" \
+  -F "teams=$TEAMID" \
   -F "notes=Version v$current_tag" \
   -F "ipa=@./platforms/ios/build/$APP_FILE""_v$current_tag.ipa" \
   -H "X-HockeyAppToken:$API_TOKEN" \
   https://rink.hockeyapp.net/api/2/apps/$APP_ID/app_versions/upload)
+
 
 # Pretty prints the JSON object
 echo "$response" | python -m json.tool
