@@ -1,7 +1,7 @@
 # banoffee (333)
 ==================
 
-# Initial Setup
+## Initial Setup
 Ensure the following are installed and up to date:
 - [__homebrew__] (http://brew.sh/)
 - [__node / npm__] (https://nodejs.org/en/download/)
@@ -9,18 +9,19 @@ Ensure the following are installed and up to date:
 
 Fork the project template from Github and install the following:
 - `$ sudo npm install -g gulp bower cucumber cordova ionic strongloop`
-- `$ sudo npm install` (to get all the dependencies)
+- `$ sudo npm install`. This will grab all of the project dependencies.
 - `$ gulp scripts`. Running this will generate your dist folder in ionic/www
 
 
 ## Configure Platforms
 
+Note: When installing the platforms, remember you don't need to run `$ cordova create hello com.example.hello "HelloWorld"`, since we have already created a project. Ignore this step in each of the platform installation instructions. 
+
 ### iOS 
 - Installation instructions can be found [here] (https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html).
-- Note: You don't need to run `$ cordova create hello com.example.hello "HelloWorld"`, since we have already created a project. 
 
 ### Android
-- Installation instructions can be found [here] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide).
+- Installation instructions can be found [here] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide). 
 - Installation Links:
 	- [SDK Tools] (http://developer.android.com/sdk/index.html#Other).
 	- [Java for OSX 2015-001] (https://support.apple.com/kb/DL1572?locale=en_US). 
@@ -31,11 +32,11 @@ Fork the project template from Github and install the following:
 	- Android SDK Build Tools (>= v19.1.0)
 	- SDK Platform Tools
 	- Android Support Repository (found in Extras).
-- Update __PATH__ in `~./bash_profile` to point to the Android SDK. Use the following command to open the profile in the default text editor `$ touch ~/.bash_profile; open ~/.bash_profile`. Update the PATH to `export PATH=${PATH}:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/platform-tools:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/tools`. Save.
+- Update __PATH__ in `~./bash_profile` to point to the Android SDK. Use the following command to open the profile in the default text editor `$ touch ~/.bash_profile; open ~/.bash_profile`. Update the PATH to e.g. `export PATH=${PATH}:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/platform-tools:/Users/<COHAESUSEMPLOYEE>/Development/android-sdk-macosx/tools`. Make sure this path matches your bash profile's location. 
 - Execute `$ source ~/.bash_profile` in the terminal.
 
-## Add Platforms to Ionic
-- Amend the __"widget id"__ in your __config.xml__ file (must follow the following standard: __com.company.name__)
+### Add the Platforms to Ionic
+- Amend the __"widget id"__ in your __config.xml__ file (must follow the following standard: __com.company.projectname__)
 - `$ ionic platform add ios`
 - `$ ionic platform add android`
 
@@ -57,7 +58,7 @@ Fork the project template from Github and install the following:
 #### Android (.apk)
 ##### Initial Deployment
 - Follow [these instructions](http://ionicframework.com/docs/guide/publishing.html) to generate and sign the .apk file.
-- Executing '$ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000' will generate your keystore file in the directory you executed the command. _.gitignore_ is set to ignore keystore files stored in the ionic folder, if you choose to store it outside of the apk folder. 
+- Executing `$ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000` will generate your keystore file in the directory you executed the command. _.gitignore_ is set to ignore keystore files stored in the ionic folder, if you choose to store it outside of the apk folder. 
 - Sign your app with `$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore android-release-unsigned.apk alias_name`
 - Update the __deploy-android.sh__ and __deploy-tags.sh__ scripts in the deploy-scripts folder. When uploading to HockeyApp, make sure the __APP_FILE__ is set to the __android-release-unsigned.apk__ file.
 - Run the deploy-Android Gulp task `$ gulp deploy-Android` 
@@ -102,7 +103,7 @@ Fork the project template from Github and install the following:
 - Make sure [Java for Mac OSX] (http://www.java.com/en/download/mac_download.jsp) and the [Android SDK] (http://developer.android.com/sdk/installing/index.html?pkg=tools) are installed.
 - Configure your Android devices via Tools > Manage AVDs in the Android SDK.
 - Inside your ionic folder, build the app via the terminal `$ ionic build android`
-- Emulate the build `$ ionic emulate android`.
+- Emulate the build `$ ionic emulate android`.w
 
 #### via GenyMotion [recommended]
 - Create and verify a [Genymotion] (https://www.genymotion.com) account.
