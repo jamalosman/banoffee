@@ -50,7 +50,7 @@ Fork the project template from Github and install the following:
 - Collect the App ID (located by selecting the app from the dashboard) and [generate an API token] (https://rink.hockeyapp.net/manage/auth_tokens) for your app. Assign the values to the respective variables in the deploy-scripts folder.
 
 ### Distribution (__important__)
-- Select _Manage App_ inside your newly-created app. From there, navigate to _Distribution_ and set the Download page to __private__. This ensures other devices provisioned on our Apple Developer account will not be able to download your app. You will either need to restrict each version manually via _Dashboard - {Your App} - Version - Manage Version_, or by amending the __deploy-android.sh__ script using these additional [API Parameters] (http://support.hockeyapp.net/kb/api/api-apps#upload-app).  
+- Select _Manage App_ inside your newly-created app. From there, navigate to _Distribution_ and set the Download page to __private__. This ensures anyone with the URL and anyone whose UDID is in the provisioning profile will not be able to access and download the app. To prvent other devices provisioned on our Apple Developer account being able to download your app, you will either need to restrict each version manually via _Dashboard - {Your App} - Version - Manage Version_, or by amending the __deploy-android.sh__ script using these additional [API Parameters] (http://support.hockeyapp.net/kb/api/api-apps#upload-app).  
 
 ### Deployment
 #### Android (.apk)
