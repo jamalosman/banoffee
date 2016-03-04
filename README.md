@@ -15,7 +15,8 @@ Fork the project template from Github and install the following:
 
 ## Configure Platforms
 
-- Amend the __"widget id"__ in your __config.xml__ file. It must follow the following standard: __com.company.projectname__ (e.g. com.cohaesus.onboardapp)
+- Amend the __"widget id"__ in your __config.xml__ file. It must follow the following standard: 
+- `__com.company.projectname__ (e.g. com.cohaesus.onboardapp)`
 
 ### iOS 
 - Ensure Xcode is up to date.
